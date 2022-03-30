@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/03/30 13:38:56 by incho            ###   ########.fr        #
+#    Updated: 2022/03/30 13:41:57 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,11 +82,11 @@ $(DIR_OBJ)		:
 			@$(MKDIR) $@
 
 $(NAME)			:	$(DIR_OBJ) $(OBJS)
-			@$(CC) $(CFLAGS) -I$(DIR_INC) $(OBJS) -o $(NAME)
+			$(CC) $(CFLAGS) -I$(DIR_INC) $(OBJS) -o $(NAME)
 			@$(ECHO) "Maked $(BLUE)$(NAME)$(NOCOLOR) $(GREEN)Successfully$(NOCOLOR)"
 
 $(DIR_OBJ)/%.o	:	%.cpp
-			@$(CC) $(CFLAGS) -I$(DIR_INC) -c $< -o $@
+			$(CC) $(CFLAGS) -I$(DIR_INC) -c $< -o $@
 			@$(ECHO) "Compiled $(ORANGE)" $< " $(GREEN)Successfully$(NOCOLOR)"
 
 clean:
