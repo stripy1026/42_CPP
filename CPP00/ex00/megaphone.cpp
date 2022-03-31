@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 #define NOISE	"* LOUD AND UNBEARABLE FEEDBACK NOISE *"
 
