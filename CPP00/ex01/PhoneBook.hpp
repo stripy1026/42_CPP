@@ -14,7 +14,7 @@ class PhoneBook
     virtual ~PhoneBook();
 
     void print_startup_message();
-    void add_contact(const Contact &contact);
+    void add_contact();
     void display_contact();
 };
 
@@ -33,9 +33,10 @@ void PhoneBook::print_startup_message()
     std::cout << "Enter command : [ADD, SEARCH, EXIT]" << std::endl;
 }
 
-void PhoneBook::add_contact(const Contact &contact)
+void PhoneBook::add_contact()
 {
-    m_contacts[m_num % 8] = contact;
+    Contact ct;
+    m_contacts[m_num % 8] = ct;
     m_num++;
 }
 

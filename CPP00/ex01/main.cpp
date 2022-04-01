@@ -3,8 +3,9 @@
 int main(void)
 {
     PhoneBook pb;
-    Contact ct;
 
     pb.print_startup_message();
     pb.add_contact();
+    pb.display_contact();
+    return (0);
 }
