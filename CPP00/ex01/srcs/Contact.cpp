@@ -1,30 +1,4 @@
-#ifndef _CONTACT_H_
-#define _CONTACT_H_
-
-#include <iostream>
-#include <string>
-
-class Contact
-{
-  private:
-    std::string m_fields[5];
-    const static std::string m_fields_name[5];
-    enum e_field
-    {
-        first_name = 0,
-        last_name,
-        nickname,
-        phone_number,
-        darkest_secret
-    };
-
-  public:
-    Contact();
-    virtual ~Contact();
-
-    void make_info();
-    void show_status();
-};
+#include "Contact.hpp"
 
 const std::string Contact::m_fields_name[5] = {"First name", "Last name", "Nickname", "Phone number", "Darkest secret"};
 
@@ -50,8 +24,8 @@ void Contact::make_info()
 
 void Contact::show_status()
 {
-    for (int i = first_name; i < darkest_secret + 1; ++i)
-        std::cout << m_fields[i] << std::endl;
-}
 
-#endif
+    for (int i = first_name; i < nickname + 1; ++i)
+        std::cout << m_fields[i] << "\t";
+    std::cout << std::endl;
+}

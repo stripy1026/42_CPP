@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/04/03 13:55:17 by incho            ###   ########.fr        #
+#    Updated: 2022/04/03 15:26:44 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ WHITE		= \033[1;37m
 # Mandatory source files
 # ----------------------------------
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp		\
+				PhoneBook.cpp	\
+				Contact.cpp
 
 # ----------------------------------
 # Object files
@@ -59,8 +61,8 @@ OBJS		=	$(addprefix $(DIR_OBJ)/, $(SRCS:%.cpp=%.o))
 # Directories and Paths
 # ----------------------------------
 
-DIR_INC	=	.
-DIR_SRC	=	.
+DIR_INC	=	./includes
+DIR_SRC	=	./srcs
 DIR_OBJ	=	./obj
 
 VPATH	=	$(DIR_SRC) $(addprefix $(DIR_SRC)/, $(SUBDIRS))
