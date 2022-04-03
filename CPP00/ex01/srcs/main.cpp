@@ -1,7 +1,4 @@
 #include "PhoneBook.hpp"
-#include "color.hpp"
-
-#define ERR_WCOMMAND "Error : Use Valid command : ADD, SEARCH, EXIT"
 
 int main(void)
 {
@@ -14,14 +11,7 @@ int main(void)
     {
         std::cout << GREEN << "Command : " << RESET;
         std::getline(std::cin, cmd);
-        if (cmd == "ADD")
-            pb.add_contact();
-        else if (cmd == "SEARCH")
-            pb.display_contact();
-        else if (cmd == "EXIT")
-            exit = true;
-        else
-            std::cout << RED << ERR_WCOMMAND << RESET << std::endl;
+        exit = pb.get_command(cmd);
     }
     return (0);
 }
