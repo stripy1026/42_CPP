@@ -15,7 +15,7 @@ void PhoneBook::print_startup_message()
     std::cout << "Enter command : [ADD, SEARCH, EXIT]" << std::endl;
 }
 
-bool PhoneBook::get_command(std::string cmd)
+bool PhoneBook::get_command(const std::string &cmd)
 {
     if (cmd == "ADD")
     {
@@ -41,10 +41,21 @@ void PhoneBook::add_contact()
 
 void PhoneBook::display_contact()
 {
-    std::cout << "Index | First name | Last name | Nickname" << std::endl;
+    std::cout << MAGENTA << "|     Index|First name| Last name|  Nickname|" << RESET << std::endl;
     for (int i = 0; (i < m_num) && (i < 8); ++i)
     {
-        std::cout << i + 1 << '\t';
+        std::cout << '|';
+        std::cout.width(10);
+        std::cout << i + 1 << '|';
         m_contacts[i].show_status();
     }
+    std::string idx;
+    int num;
+    std::cout << GREEN << "Index : " << RESET;
+    std::getline(std::cin, idx);
+    num = std::atoi(idx.c_str());
+    if (num < 1 || num > m_num)
+        std::cout << RED << ERR_WINDEX << RESET << std::endl;
+    else
+        m_contacts[num - 1].display();
 }

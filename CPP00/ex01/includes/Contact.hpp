@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "color.hpp"
 
 class Contact
 {
@@ -24,6 +25,7 @@ class Contact
 
     void make_info();
     void show_status();
+    void display();
 };
 
 #endif

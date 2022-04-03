@@ -24,8 +24,26 @@ void Contact::make_info()
 
 void Contact::show_status()
 {
+    std::string out;
+    std::string idx;
 
     for (int i = first_name; i < nickname + 1; ++i)
-        std::cout << m_fields[i] << "\t";
+    {
+        if (m_fields[i].size() > 10)
+        {
+            out = m_fields[i].substr(0, 9);
+            out.push_back('.');
+        }
+        else
+            out = m_fields[i];
+        std::cout.width(10);
+        std::cout << out << '|';
+    }
     std::cout << std::endl;
+}
+
+void Contact::display()
+{
+    for (int i = first_name; i < darkest_secret + 1; ++i)
+        std::cout << m_fields_name[i] << " : " << m_fields[i] << std::endl;
 }
