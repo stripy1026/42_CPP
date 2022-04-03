@@ -35,8 +35,7 @@ void PhoneBook::print_startup_message()
 
 void PhoneBook::add_contact()
 {
-    Contact ct;
-    m_contacts[m_num % 8] = ct;
+    m_contacts[m_num % 8].make_info();
     m_num++;
 }
 

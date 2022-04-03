@@ -21,6 +21,8 @@ class Contact
   public:
     Contact();
     virtual ~Contact();
+
+    void make_info();
     void show_status();
 };
 
@@ -28,19 +30,22 @@ const std::string Contact::m_fields_name[5] = {"First name", "Last name", "Nickn
 
 Contact::Contact()
 {
-    std::string command;
-
-    std::cout << "Enter contact informations" << std::endl;
     for (int i = first_name; i < darkest_secret + 1; ++i)
-    {
-        std::cout << m_fields_name[i] << " : ";
-        std::getline(std::cin, command);
-        m_fields[i] = command;
-    }
+        m_fields[i] = std::string();
 }
 
 Contact::~Contact()
 {
+}
+
+void Contact::make_info()
+{
+    std::cout << "Enter contact informations" << std::endl;
+    for (int i = first_name; i < darkest_secret + 1; ++i)
+    {
+        std::cout << m_fields_name[i] << " : ";
+        std::getline(std::cin, m_fields[i]);
+    }
 }
 
 void Contact::show_status()
