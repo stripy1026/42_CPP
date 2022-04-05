@@ -59,6 +59,7 @@ void Account::_displayTimestamp()
     std::cout << std::setw(2) << timeinfo->tm_min;
     std::cout << std::setw(2) << timeinfo->tm_sec;
     std::cout << "] ";
+    std::cout << std::setfill(' ');
 }
 
 int Account::getNbAccounts()
