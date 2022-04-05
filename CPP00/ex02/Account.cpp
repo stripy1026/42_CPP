@@ -1,7 +1,8 @@
-#include "Account.hpp"
-#include <chrono>
+#include <ctime>
 #include <iomanip>
 #include <iostream>
+
+#include "Account.hpp"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -44,12 +45,20 @@ Account::~Account()
 
 void Account::_displayTimestamp()
 {
-    std::chrono::time_point<std::chrono::system_clock> now = std::chrono::system_clock::now();
-    std::time_t time_now = std::chrono::system_clock::to_time_t(now);
-    tm utc_tm = *localtime(&time_now);
-    std::cout << std::setfill('0') << "[" << (utc_tm.tm_year + 1900) << std::setw(2) << utc_tm.tm_mon << std::setw(2)
-              << utc_tm.tm_mday << "_" << std::setw(2) << utc_tm.tm_hour << std::setw(2) << utc_tm.tm_min
-              << std::setw(2) << utc_tm.tm_sec << "] ";
+    std::time_t tmp;
+    struct std::tm *timeinfo;
+
+    std::time(&tmp);
+    timeinfo = std::localtime(&tmp);
+    std::cout << std::setfill('0');
+    std::cout << "[";
+    std::cout << 1900 + timeinfo->tm_year;
+    std::cout << std::setw(2) << 1 + timeinfo->tm_mon;
+    std::cout << std::setw(2) << timeinfo->tm_mday << "_";
+    std::cout << std::setw(2) << timeinfo->tm_hour;
+    std::cout << std::setw(2) << timeinfo->tm_min;
+    std::cout << std::setw(2) << timeinfo->tm_sec;
+    std::cout << "] ";
 }
 
 int Account::getNbAccounts()
