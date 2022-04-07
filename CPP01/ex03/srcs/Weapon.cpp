@@ -2,14 +2,18 @@
 
 Weapon::Weapon()
 {
-    m_type = std::string();
+}
+
+Weapon::Weapon(std::string type)
+{
+    m_type = type;
 }
 
 Weapon::~Weapon()
 {
 }
 
-const std::string &Weapon::getType()
+std::string const &Weapon::getType() const
 {
     return (m_type);
 }
