@@ -3,8 +3,6 @@
 
 #include <string>
 
-#include "color.hpp"
-
 #define ZOMBIE_SOUND "BraiiiiiiinnnzzzZ..."
 
 class Zombie
