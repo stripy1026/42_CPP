@@ -2,10 +2,11 @@
 
 int main()
 {
-    Zombie *zombie;
-    zombie = newZombie(std::string("Foo"));
-    randomChump(std::string("Bar"));
-    zombie->announce();
-	delete zombie;
-    return (0);
+	Zombie *horde;
+
+	horde = zombieHorde(5, "Foo");
+	for (int i = 0; i < 5; ++i)
+		horde[i].announce();
+	delete[] horde;
+	return (0);
 }

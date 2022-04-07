@@ -3,8 +3,6 @@
 
 #include <string>
 
-#include "color.hpp"
-
 #define ZOMBIE_SOUND "BraiiiiiiinnnzzzZ..."
 
 class Zombie
@@ -13,13 +11,13 @@ class Zombie
     std::string m_name;
 
   public:
-	Zombie();
-    Zombie(std::string name);
+    Zombie();
     ~Zombie();
 
     void announce(void);
+	void setName(std::string name);
 };
 
-Zombie *zombieHorde(int N, std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
