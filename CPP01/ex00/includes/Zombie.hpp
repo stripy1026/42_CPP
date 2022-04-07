@@ -14,7 +14,6 @@ class Zombie
 		std::string m_name;
 
 	public:
-		Zombie();
 		Zombie(std::string name);
 		~Zombie();
 

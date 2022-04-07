@@ -1,20 +1,14 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie()
-{
-	m_name = std::string();
-}
-
 Zombie::Zombie(std::string name)
 {
 	m_name = name;
+	std::cout << YELLOW << m_name << RESET << " is summoned." << std::endl;
 }
 
 Zombie::~Zombie()
 {
-	if (this)
-		delete this;
-	std::cout << YELLOW << m_name << RESET << " has been destroyed." << std::endl;
+	std::cout << YELLOW << m_name << RESET << " is terminated." << std::endl;
 }
 
 void Zombie::announce()
