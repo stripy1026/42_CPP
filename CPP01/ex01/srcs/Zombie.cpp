@@ -1,4 +1,11 @@
+#include <iostream>
+
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+	m_name = std::string();
+}
 
 Zombie::Zombie(std::string name)
 {

@@ -1,7 +1,6 @@
 #ifndef _ZOMBIE_H_
 #define _ZOMBIE_H_
 
-#include <iostream>
 #include <string>
 
 #include "color.hpp"
@@ -14,6 +13,7 @@ class Zombie
     std::string m_name;
 
   public:
+	Zombie();
     Zombie(std::string name);
     ~Zombie();
 
