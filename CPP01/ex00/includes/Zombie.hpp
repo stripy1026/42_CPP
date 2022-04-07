@@ -4,25 +4,24 @@
 #include <string>
 #include <iostream>
 
+#include "color.hpp"
+
 #define	ZOMBIE_SOUND "BraiiiiiiinnnzzzZ..."
 
 class Zombie
 {
 	private:
-		std::string name;
+		std::string m_name;
 
 	public:
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+
 		void announce(void);
-		Zombie *newZombie(std::string name);
 };
 
-void Zombie::announce()
-{
-	std::cout << name << ": " << ZOMBIE_SOUND << std::endl;
-}
-
-Zombie *Zombie::newZombie(std::string name)
-{
-}
+Zombie *newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif

@@ -1,7 +1,10 @@
-#include <iostream>
+#include "Zombie.hpp"
 
 int	main()
 {
-	std::cout << "init" << std::endl;
+	Zombie *zombie;
+	zombie = newZombie(std::string("Foo"));
+	randomChump(std::string("Bar"));
+	zombie->announce();
 	return (0);
 }
