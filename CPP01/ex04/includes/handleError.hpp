@@ -1,7 +1,6 @@
 #ifndef _HANDLE_ERROR_HPP_
 #define _HANDLE_ERROR_HPP_
 
-#include <cstdlib>
 #include <iostream>
 #include <string>
 

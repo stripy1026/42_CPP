@@ -2,6 +2,7 @@
 #define _STRING_EDITOR_HPP_
 
 #include <fstream>
+#include <cstdlib>
 
 #include "handleError.hpp"
 

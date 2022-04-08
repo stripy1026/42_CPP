@@ -21,12 +21,12 @@ void StringEditor::m_replaceRecursive(std::string s1, std::string s2, std::strin
 
     pos = buffer.find(s1);
     if (pos == std::string::npos)
-        m_fout << buffer << std::endl;
+        m_fout << buffer;
     else
     {
         m_fout << buffer.substr(0, pos);
-		m_fout << s2;
-		m_replaceRecursive(s1, s2, buffer.substr(pos + s1.size()));
+        m_fout << s2;
+        m_replaceRecursive(s1, s2, buffer.substr(pos + s1.size()));
     }
 }
 
@@ -34,6 +34,11 @@ void StringEditor::replace(std::string s1, std::string s2)
 {
     std::string buffer;
 
-    while (getline(m_fin, buffer))
-        m_replaceRecursive(s1, s2, buffer);
+    while (std::getline(m_fin, buffer))
+    {
+        if (m_fin.eof())
+            m_replaceRecursive(s1, s2, buffer);
+        else
+            m_replaceRecursive(s1, s2, buffer + '\n');
+    }
 }
