@@ -12,11 +12,14 @@ class StringEditor
     std::ofstream m_fout;
     std::string m_filename;
     std::string m_replaced_filename;
-    std::string m_buffer;
+
+    void m_replaceRecursive(std::string s1, std::string s2, std::string buffer);
 
   public:
     StringEditor(std::string filename);
     ~StringEditor();
+
+    void replace(std::string s1, std::string s2);
 };
 
 #endif // _STRING_EDITOR_HPP_
