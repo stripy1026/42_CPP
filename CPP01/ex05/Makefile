@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/04/10 14:44:15 by incho            ###   ########.fr        #
+#    Updated: 2022/04/10 15:20:04 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ WHITE		= \033[1;37m
 # Mandatory source files
 # ----------------------------------
 
-SRCS		=	main.cpp		
+SRCS		=	main.cpp		\
+				handleError.cpp	\
+				Harl.cpp		
 
 # ----------------------------------
 # Object files
