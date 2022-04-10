@@ -12,26 +12,30 @@ Harl::~Harl()
 
 void Harl::debug()
 {
-    std::cout << "I love having extra bacon for my Mom's touch fillet burger. I really do!" << std::endl;
+    std::cout << MAGENTA << "[DEBUG] " << RESET
+              << "I love having extra bacon for my Mom's touch fillet burger. I really do!" << std::endl;
 }
 
 void Harl::info()
 {
-    std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! if "
+    std::cout << MAGENTA << "[INFO] " << RESET
+              << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! if "
                  "you did, I wouldn’t be asking for more!"
               << std::endl;
 }
 
 void Harl::warining()
 {
-    std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started "
+    std::cout << MAGENTA << "[WARNING] " << RESET
+              << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started "
                  "working here since last month."
               << std::endl;
 }
 
 void Harl::error()
 {
-    std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+    std::cout << MAGENTA << "[ERROR] " << RESET << "This is unacceptable! I want to speak to the manager now."
+              << std::endl;
 }
 
 void Harl::complain(std::string level)
