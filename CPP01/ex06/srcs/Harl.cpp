@@ -40,6 +40,28 @@ void Harl::error()
 
 void Harl::complain(std::string level)
 {
+	unsigned char hashVal;
+
+	hashVal = level.length * 1000 + level[0] * 1000 + level[1] * 100;
+
+	level 
+
+	[0] ("DEBUG") -> debug();
+	[1] 
+
+
+	[4] -> default();
+
+	...
+	[255] -> 
+
+	functionArray;
+
+	short.max(); -> default();
+
+	functionArray(decode(level));
+
+	val -> len, word front[7] short 
     if (level == "DEBUG")
         debug();
     else if (level == "INFO")
