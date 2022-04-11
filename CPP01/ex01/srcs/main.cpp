@@ -2,11 +2,11 @@
 
 int main()
 {
-	Zombie *horde;
+    Zombie *horde;
 
-	horde = zombieHorde(5, "Foo");
-	for (int i = 0; i < 5; ++i)
-		horde[i].announce();
-	delete[] horde;
-	return (0);
+    horde = zombieHorde(5, "Foo");
+    for (int i = 0; i < 5; ++i)
+        horde[i].announce();
+    delete[] horde;
+    return (0);
 }

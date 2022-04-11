@@ -3,9 +3,8 @@
 #include "Zombie.hpp"
 #include "color.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie() : m_name("")
 {
-	m_name = std::string();
 	std::cout << "A zombie is summoned." << std::endl;
 }
 
