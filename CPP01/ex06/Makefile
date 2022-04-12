@@ -6,13 +6,13 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/04/12 03:18:31 by incho            ###   ########.fr        #
+#    Updated: 2022/04/12 13:07:41 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SUFFIXES: .c .o .h
 
-NAME	=	Harl_2.0
+NAME	=	HarlFilter
 
 CP		=	cp
 RM		=	rm -f

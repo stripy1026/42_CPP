@@ -24,6 +24,6 @@ int main()
         club.setType("baseball club");
         jim.attack();
     }
-
+	
     return (0);
 }

@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/04/07 14:59:52 by incho            ###   ########.fr        #
+#    Updated: 2022/04/12 12:59:40 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ VPATH	=	$(DIR_SRC) $(addprefix $(DIR_SRC)/, $(SUBDIRS))
 # ----------------------------------
 
 CC		=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 # ----------------------------------
 # Rules
