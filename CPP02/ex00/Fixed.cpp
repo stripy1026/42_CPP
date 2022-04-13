@@ -10,10 +10,9 @@ Fixed::~Fixed()
     std::cout << "Destructor " << GREEN << "called" << RESET << std::endl;
 }
 
-Fixed::Fixed(const Fixed &src)
+Fixed::Fixed(const Fixed &src) : m_raw_bits(src.m_raw_bits)
 {
     std::cout << "Copy constructor " << GREEN << "called" << RESET << std::endl;
-    *this = src;
 }
 
 Fixed &Fixed::operator=(const Fixed &rhs)

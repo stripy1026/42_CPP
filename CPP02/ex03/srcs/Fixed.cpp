@@ -8,9 +8,8 @@ Fixed::~Fixed()
 {
 }
 
-Fixed::Fixed(const Fixed &src)
+Fixed::Fixed(const Fixed &src) : m_raw_bits(src.m_raw_bits)
 {
-    *this = src;
 }
 
 Fixed &Fixed::operator=(const Fixed &rhs)
