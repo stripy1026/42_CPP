@@ -19,7 +19,7 @@ Fixed::Fixed(const Fixed &src)
 Fixed &Fixed::operator=(const Fixed &rhs)
 {
     std::cout << "Copy assignment operator " << GREEN << "called" << RESET << std::endl;
-    m_raw_bits = rhs.getRawBits();
+    m_raw_bits = rhs.m_raw_bits;
     return (*this);
 }
 
