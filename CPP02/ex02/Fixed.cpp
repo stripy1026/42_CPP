@@ -53,6 +53,70 @@ int Fixed::toInt() const
     return (m_raw_bits >> m_bnp_pos);
 }
 
+bool Fixed::operator>(const Fixed &rhs) const
+{
+    return (m_bnp_pos > rhs.m_bnp_pos);
+}
+
+bool Fixed::operator<(const Fixed &rhs) const
+{
+    return (m_bnp_pos < rhs.m_bnp_pos);
+}
+
+bool Fixed::operator>=(const Fixed &rhs) const
+{
+    return (m_bnp_pos >= rhs.m_bnp_pos);
+}
+
+bool Fixed::operator<=(const Fixed &rhs) const
+{
+    return (m_bnp_pos <= rhs.m_bnp_pos);
+}
+
+bool Fixed::operator==(const Fixed &rhs) const
+{
+    return (m_bnp_pos == rhs.m_bnp_pos);
+}
+
+bool Fixed::operator!=(const Fixed &rhs) const
+{
+    return (m_bnp_pos != rhs.m_bnp_pos);
+}
+
+Fixed Fixed::operator+(const Fixed &rhs) const
+{
+    Fixed ret;
+    ret.m_raw_bits = m_raw_bits + rhs.m_raw_bits;
+    return (ret);
+}
+
+Fixed Fixed::operator-(const Fixed &rhs) const
+{
+    Fixed ret;
+    ret.m_raw_bits = m_raw_bits - rhs.m_raw_bits;
+    return (ret);
+}
+
+Fixed Fixed::operator*(const Fixed &rhs) const
+{
+    const int i1 = m_raw_bits >> m_bnp_pos;
+    const int i2 = rhs.m_raw_bits >> rhs.m_bnp_pos;
+    const int f1 = m_raw_bits & ((1 << m_bnp_pos) - 1);
+    const int f2 = rhs.m_raw_bits & ((1 << rhs.m_bnp_pos) - 1);
+    Fixed ret;
+
+    ret.m_raw_bits = ((i1 * i2) << m_bnp_pos) + ((f1 * f2) >> m_bnp_pos) + (i1 * f2) + (i2 * f1);
+    return (ret);
+}
+
+Fixed Fixed::operator/(const Fixed &rhs) const
+{
+    const long div = (m_raw_bits >> m_bnp_pos) / rhs.m_raw_bits;
+    Fixed ret;
+    ret.m_raw_bits = (int)div;
+    return (ret);
+}
+
 std::ostream &operator<<(std::ostream &os, const Fixed &rhs)
 {
     os << rhs.toFloat();
