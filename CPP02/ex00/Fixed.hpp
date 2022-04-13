@@ -9,7 +9,7 @@ class Fixed
 {
   private:
     int m_raw_bits;
-    static const int m_bnp_pos;
+    static const int m_bnp_pos = 8;
 
   public:
     Fixed();

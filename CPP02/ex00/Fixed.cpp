@@ -1,7 +1,5 @@
 #include "Fixed.hpp"
 
-const int m_bnp_pos = 8;
-
 Fixed::Fixed() : m_raw_bits(0)
 {
     std::cout << "Default constructor " << GREEN << "called" << RESET << std::endl;
