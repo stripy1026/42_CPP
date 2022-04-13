@@ -18,5 +18,13 @@ int main()
     std::cout << GREEN << "b is " << RESET << b.toInt() << YELLOW << " as integer" << RESET << std::endl;
     std::cout << GREEN << "c is " << RESET << c.toInt() << YELLOW << " as integer" << RESET << std::endl;
     std::cout << GREEN << "d is " << RESET << d.toInt() << YELLOW << " as integer" << RESET << std::endl;
+
+    std::cout << MAGENTA << "==========RAW BITS==========" << RESET << std::endl;
+    std::cout << GREEN << "a bits " << RESET << a.getRawBits() << std::endl;
+    std::cout << GREEN << "b bits " << RESET << b.getRawBits() << std::endl;
+    std::cout << GREEN << "c bits " << RESET << c.getRawBits() << std::endl;
+    std::cout << GREEN << "d bits " << RESET << d.getRawBits() << std::endl;
+    std::cout << MAGENTA << "============================" << RESET << std::endl;
+
     return (0);
 }

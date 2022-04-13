@@ -36,13 +36,11 @@ Fixed::Fixed(const float num)
 
 int Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function " << GREEN << "called" << RESET << std::endl;
     return (m_raw_bits);
 }
 
 void Fixed::setRawBits(const int raw_bits)
 {
-    std::cout << "setRawBits member function " << GREEN << "called" << RESET << std::endl;
     m_raw_bits = raw_bits;
 }
 
