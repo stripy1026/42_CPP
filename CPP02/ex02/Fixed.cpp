@@ -2,35 +2,29 @@
 
 Fixed::Fixed() : m_raw_bits(0)
 {
-    std::cout << "Default constructor " << GREEN << "called" << RESET << std::endl;
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor " << GREEN << "called" << RESET << std::endl;
 }
 
 Fixed::Fixed(const Fixed &src)
 {
-    std::cout << "Copy constructor " << GREEN << "called" << RESET << std::endl;
     *this = src;
 }
 
 Fixed &Fixed::operator=(const Fixed &rhs)
 {
-    std::cout << "Copy assignment operator " << GREEN << "called" << RESET << std::endl;
     m_raw_bits = rhs.m_raw_bits;
     return (*this);
 }
 
 Fixed::Fixed(const int num) : m_raw_bits(num << m_bnp_pos)
 {
-    std::cout << "Int constructor " << GREEN << "called" << RESET << std::endl;
 }
 
 Fixed::Fixed(const float num) : m_raw_bits((int)roundf(num * (1 << m_bnp_pos)))
 {
-    std::cout << "Float constructor " << GREEN << "called" << RESET << std::endl;
 }
 
 int Fixed::getRawBits() const
@@ -55,32 +49,32 @@ int Fixed::toInt() const
 
 bool Fixed::operator>(const Fixed &rhs) const
 {
-    return (m_bnp_pos > rhs.m_bnp_pos);
+    return (m_raw_bits > rhs.m_raw_bits);
 }
 
 bool Fixed::operator<(const Fixed &rhs) const
 {
-    return (m_bnp_pos < rhs.m_bnp_pos);
+    return (m_raw_bits < rhs.m_raw_bits);
 }
 
 bool Fixed::operator>=(const Fixed &rhs) const
 {
-    return (m_bnp_pos >= rhs.m_bnp_pos);
+    return (m_raw_bits >= rhs.m_raw_bits);
 }
 
 bool Fixed::operator<=(const Fixed &rhs) const
 {
-    return (m_bnp_pos <= rhs.m_bnp_pos);
+    return (m_raw_bits <= rhs.m_raw_bits);
 }
 
 bool Fixed::operator==(const Fixed &rhs) const
 {
-    return (m_bnp_pos == rhs.m_bnp_pos);
+    return (m_raw_bits == rhs.m_raw_bits);
 }
 
 bool Fixed::operator!=(const Fixed &rhs) const
 {
-    return (m_bnp_pos != rhs.m_bnp_pos);
+    return (m_raw_bits != rhs.m_raw_bits);
 }
 
 Fixed Fixed::operator+(const Fixed &rhs) const
@@ -115,6 +109,52 @@ Fixed Fixed::operator/(const Fixed &rhs) const
     Fixed ret;
     ret.m_raw_bits = (int)div;
     return (ret);
+}
+
+Fixed &Fixed::operator++()
+{
+    ++m_raw_bits;
+    return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp = *this;
+    ++m_raw_bits;
+    return (tmp);
+}
+
+Fixed &Fixed::operator--()
+{
+    --m_raw_bits;
+    return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp = *this;
+    --m_raw_bits;
+    return (tmp);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+    return (a > b ? b : a);
+}
+
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
+{
+    return (a > b ? b : a);
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+    return (a < b ? b : a);
+}
+
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
+{
+    return (a < b ? b : a);
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &rhs)
