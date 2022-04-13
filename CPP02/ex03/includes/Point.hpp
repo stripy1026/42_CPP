@@ -16,25 +16,12 @@ class Point
     Point &operator=(const Point &rhs);
 
     Point(const float x, const float y);
+	Fixed getX() const;
+	Fixed getY() const;
 };
 
-Point::Point() : m_x(0), m_y(0)
-{
-}
+std::ostream &operator<<(std::ostream &os, const Point &rhs);
 
-Point::~Point()
-{
-}
-
-Point::Point(const Point &src) : m_x(src.m_x), m_y(src.m_y)
-{
-}
-
-Point &Point::operator=(const Point &rhs)
-{
-    m_x = rhs.m_x;
-    m_y = rhs.m_y;
-    return (*this);
-}
+bool bsp(const Point a, const Point b, const Point c, const Point point);
 
 #endif // _POINT_HPP_
