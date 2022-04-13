@@ -10,8 +10,9 @@ Fixed::~Fixed()
     std::cout << "Destructor " << GREEN << "called" << RESET << std::endl;
 }
 
-Fixed::Fixed(const Fixed &src) : m_raw_bits(src.m_raw_bits)
+Fixed::Fixed(const Fixed &src)
 {
+	*this = src;
     std::cout << "Copy constructor " << GREEN << "called" << RESET << std::endl;
 }
 
