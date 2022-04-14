@@ -1,11 +1,5 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : m_name("CL4P-TP"), m_hit_points(10), m_energy_points(10), m_attack_damage(0)
-{
-    m_message("Claptrap has been built.");
-    m_display_quote(CLTR_JOIN);
-}
-
 void ClapTrap::m_message(const std::string &msg) const
 {
     std::cout << YELLOW << "[MESSAGE] " << msg << RESET << std::endl;
@@ -31,10 +25,16 @@ void ClapTrap::m_display_ep() const
     std::cout << YELLOW << m_name << " EP : " << RESET << m_energy_points << std::endl;
 }
 
+ClapTrap::ClapTrap() : m_name("CL4P-TP"), m_hit_points(10), m_energy_points(10), m_attack_damage(0)
+{
+    m_message("Claptrap has been built.");
+    m_display_quote(CLTR_JOIN);
+}
+
 ClapTrap::~ClapTrap()
 {
     m_message("Claptrap has been destroyed.");
-    std::cout << CLTR_DEAD << std::endl;
+    m_display_quote(CLTR_DEAD);
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
