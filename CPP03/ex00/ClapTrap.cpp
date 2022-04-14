@@ -11,6 +11,11 @@ void ClapTrap::m_message(const std::string &msg) const
     std::cout << YELLOW << "[MESSAGE] " << msg << RESET << std::endl;
 }
 
+void ClapTrap::m_display_interaction(const std::string &kind, const int amount, const std::string &target) const
+{
+    std::cout << YELLOW << "[INTERACTION] " << kind << " = " << amount << " TO " << target << RESET << std::endl;
+}
+
 void ClapTrap::m_display_quote(const std::string &msg) const
 {
     std::cout << GREEN << "(" << m_name << ") " << RESET << msg << std::endl;
@@ -62,11 +67,18 @@ ClapTrap::ClapTrap(std::string name) : m_name(name), m_hit_points(10), m_energy_
 
 void ClapTrap::attack(const std::string &target)
 {
-    if (m_hit_points <= 0 || m_energy_points == 0)
+    if (m_hit_points <= 0)
+    {
+        m_message("Attack failed.");
+        m_display_hp();
+        return;
+    }
+    if (m_energy_points == 0)
     {
         m_message("Attack failed.");
         m_display_hp();
         m_display_ep();
+        m_display_quote(CLTR_NOEP);
         return;
     }
     --m_energy_points;
@@ -88,6 +100,7 @@ void ClapTrap::takeDamage(unsigned int amount)
     {
         m_hit_points -= amount;
         m_message("Claptrap has been damaged.");
+        m_display_interaction("DMG", amount, m_name);
         m_display_quote(CLTR_TDMG);
         m_display_hp();
     }
@@ -100,16 +113,25 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (m_hit_points <= 0 || m_energy_points == 0)
+    if (m_hit_points <= 0)
+    {
+        m_message("Repair failed.");
+        m_display_hp();
+        return;
+    }
+    if (m_energy_points == 0)
     {
         m_message("Repair failed.");
         m_display_hp();
         m_display_ep();
+        m_display_quote(CLTR_NOEP);
         return;
     }
     --m_energy_points;
     m_hit_points += amount;
     m_message("Claptrap repaired.");
+    m_display_interaction("REPAIR", amount, m_name);
     m_display_hp();
     m_display_ep();
+    m_display_quote(CLTR_REPA);
 }

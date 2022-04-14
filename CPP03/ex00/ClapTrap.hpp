@@ -11,6 +11,8 @@
 #define CLTR_DEAD "Argh arghargh death gurgle gurglegurgle urgh ... death."
 #define CLTR_ATTK "Take that !"
 #define CLTR_TDMG "Oh my God, I'm leaking ! I think I'm leaking ! Ahhhh, I'm leaking ! There's oil everywhere !"
+#define CLTR_NOEP "Dangit, I'm out !"
+#define CLTR_REPA "Sweet life juice !"
 #define CLTR_DOWN "Robot down !"
 
 class ClapTrap
@@ -23,6 +25,7 @@ class ClapTrap
 
     void m_message(const std::string &msg) const;
     void m_display_quote(const std::string &msg) const;
+    void m_display_interaction(const std::string &kind, const int amount, const std::string &target) const;
     void m_display_hp() const;
     void m_display_ep() const;
 
