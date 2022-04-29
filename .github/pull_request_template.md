@@ -11,7 +11,7 @@
 - [ ] Changing feature (modifying existing feature or fixing bug)
 - [ ] Docs updated required
 
-# 테스트 결과
+# Test results
 
 - [ ] Compile succeed
 - [ ] Envr diff with 42-cluster
