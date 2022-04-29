@@ -1,14 +1,5 @@
 #include "ClapTrap.hpp"
 
-#define CLTR_JOIN "You want me ? To join you ? I am SO excited. We will be best friends."
-#define CLTR_SELT "Recompiling my combat code !"
-#define CLTR_DEAD "Argh arghargh death gurgle gurglegurgle urgh ... death."
-#define CLTR_ATTK "Take that !"
-#define CLTR_TDMG "Oh my God, I'm leaking ! I think I'm leaking ! Ahhhh, I'm leaking ! There's oil everywhere !"
-#define CLTR_NOEP "Dangit, I'm out !"
-#define CLTR_REPA "Sweet life juice !"
-#define CLTR_DOWN "Robot down !"
-
 void ClapTrap::m_message(const std::string &msg) const
 {
     std::cout << YELLOW << "[MESSAGE] " << msg << RESET << std::endl;

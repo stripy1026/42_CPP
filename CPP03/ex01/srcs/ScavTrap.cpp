@@ -1,11 +1,5 @@
 #include "ScavTrap.hpp"
 
-#define SCTR_JOIN "Hey everybody ! Check out my package !"
-#define SCTR_DEAD "Woah ! Oh ! Jeez !"
-#define SCTR_ATTK "Heyyah !"
-#define SCTR_NOEP "Coming up empty !"
-#define SCTR_GATE "This is why I was built !"
-
 ScavTrap::ScavTrap() : ClapTrap("SC4V-TP")
 {
     m_hit_points = 100;
