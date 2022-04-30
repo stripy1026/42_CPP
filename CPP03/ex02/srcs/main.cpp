@@ -61,7 +61,7 @@ int main(void)
         printTitle("running out of energy");
         FragTrap fragTrap("Fraggy");
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 100; i++)
             fragTrap.attack("random human");
         fragTrap.beRepaired(10);
         fragTrap.attack("random human");

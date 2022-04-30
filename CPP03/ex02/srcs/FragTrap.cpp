@@ -36,7 +36,7 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
     m_display_quote(FRTR_JOIN);
 }
 
-void FragTrap::highFiveGuys()
+void FragTrap::highFiveGuys() const
 {
     if (m_hit_points <= 0)
     {

@@ -19,7 +19,7 @@ class ScavTrap : public ClapTrap
 
     ScavTrap(const std::string &name);
     void attack(const std::string &target);
-    void guardGate();
+    void guardGate() const;
 };
 
 #endif // _SCAV_TRAP_HPP_

@@ -59,7 +59,7 @@ void ScavTrap::attack(const std::string &target)
     m_display_quote(SCTR_ATTK);
 }
 
-void ScavTrap::guardGate()
+void ScavTrap::guardGate() const
 {
     if (m_hit_points <= 0)
     {
