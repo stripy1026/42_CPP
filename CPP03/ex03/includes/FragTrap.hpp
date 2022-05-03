@@ -7,7 +7,7 @@
 #define FRTR_DEAD "My robotic flesh ! AAHH !"
 #define FRTR_HIFV "*high-five* Up top !"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
   public:
     FragTrap();

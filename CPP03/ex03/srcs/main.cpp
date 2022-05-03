@@ -1,6 +1,6 @@
 #include <iomanip>
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 #define SIZE 52
 
@@ -41,31 +41,20 @@ static void printTitle(std::string title, bool toUpper = true)
 
 int main(void)
 {
-    {
-        printTitle("testing member functions");
-        ClapTrap clapTrap("Clappy");
-        FragTrap fragTrap("Fraggy");
 
-        fragTrap.attack("random human");
-        clapTrap.attack("random human");
-        fragTrap.highFiveGuys();
-        fragTrap.takeDamage(30);
-        fragTrap.beRepaired(10);
-        fragTrap.takeDamage(50);
-        fragTrap.takeDamage(30);
-        fragTrap.takeDamage(10);
-        fragTrap.beRepaired(1);
-        fragTrap.attack("Clappy");
-    }
-    {
-        printTitle("running out of energy");
-        FragTrap fragTrap("Fraggy");
+    printTitle("Experiment for DiamondTrap has initiated.");
+    DiamondTrap d("DI4M_TP");
 
-        for (int i = 0; i < 100; i++)
-            fragTrap.attack("random human");
-        fragTrap.beRepaired(10);
-        fragTrap.attack("random human");
-        fragTrap.takeDamage(100);
-    }
+    d.attack("everything promiscuously");
+    d.guardGate();
+    d.highFiveGuys();
+    d.takeDamage(13);
+    d.beRepaired(47);
+
+    DiamondTrap dCopy(d);
+
+    d.whoAmI();
+    dCopy.whoAmI();
+
     return (0);
 }

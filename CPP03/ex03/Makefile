@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/04/30 17:49:55 by incho            ###   ########.fr        #
+#    Updated: 2022/05/03 23:01:26 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ WHITE		= \033[1;37m
 SRCS		=	main.cpp		\
 				ClapTrap.cpp	\
 				ScavTrap.cpp	\
-				FragTrap.cpp
+				FragTrap.cpp	\
+				DiamondTrap.cpp
 
 # ----------------------------------
 # Object files

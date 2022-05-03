@@ -9,7 +9,7 @@
 #define SCTR_NOEP "Coming up empty !"
 #define SCTR_GATE "This is why I was built !"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
   public:
     ScavTrap();
