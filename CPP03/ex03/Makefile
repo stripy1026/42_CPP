@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/05/03 23:01:26 by incho            ###   ########.fr        #
+#    Updated: 2022/05/12 22:00:31 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,15 @@ VPATH	=	$(DIR_SRC) $(addprefix $(DIR_SRC)/, $(SUBDIRS))
 
 CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
+# ----------------------------------
+# Debug flag
+# ----------------------------------
+
+ifdef DEBUG
+	NAME = a.out
+	CFLAGS += -g
+endif
 
 # ----------------------------------
 # Rules
