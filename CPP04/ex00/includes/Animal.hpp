@@ -1,18 +1,26 @@
 #ifndef _ANIMAL_HPP_
 #define _ANIMAL_HPP_
 
+#include "color.hpp"
+
 #include <iostream>
 
 class Animal
 {
+  private:
+    Animal(const Animal &src);
+    Animal &operator=(const Animal &rhs);
+
   protected:
-    std::string type;
+    std::string m_type;
 
   public:
     Animal();
     ~Animal();
-    Animal(const Animal &src);
-    Animal &operator=(const Animal &rhs);
+
+    Animal(const std::string type);
+    std::string getType() const;
+    virtual void makeSound() const;
 };
 
 #endif //_ANIMAL_HPP_

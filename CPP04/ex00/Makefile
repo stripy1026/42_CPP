@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/05/24 14:16:13 by incho            ###   ########.fr        #
+#    Updated: 2022/05/24 15:15:23 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 # ----------------------------------
 
 ifdef DEBUG
-	NAME = a.out
+	NAME = exe_for_debug
 	CFLAGS += -g
 endif
 
@@ -107,6 +107,7 @@ clean:
 
 fclean			:	clean
 			@$(RM) -r $(NAME)
+			@$(RM) -r exe_for_debug
 			@$(ECHO) "Removed $(RED)$(NAME)$(NOCOLOR)"
 
 re				:	fclean $(NAME)

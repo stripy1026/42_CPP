@@ -5,11 +5,16 @@
 
 class Cat : public Animal
 {
+  private:
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &rhs);
+
   public:
     Cat();
     ~Cat();
-    Cat(const Cat &src);
-    Cat &operator=(const Cat &rhs);
+
+	std::string getType() const;
+	void makeSound() const;
 };
 
 #endif //_CAT_HPP_

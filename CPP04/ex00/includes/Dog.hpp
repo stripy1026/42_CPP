@@ -5,11 +5,16 @@
 
 class Dog : public Animal
 {
+  private:
+    Dog(const Dog &src);
+    Dog &operator=(const Dog &rhs);
+
   public:
     Dog();
     ~Dog();
-    Dog(const Dog &src);
-    Dog &operator=(const Dog &rhs);
+
+    std::string getType() const;
+	void makeSound() const;
 };
 
 #endif //_DOG_HPP_
