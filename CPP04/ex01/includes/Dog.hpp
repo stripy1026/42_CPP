@@ -9,15 +9,15 @@ class Dog : public Animal
   private:
     Brain *m_brain;
 
-    Dog(const Dog &src);
-    Dog &operator=(const Dog &rhs);
-
   public:
     Dog();
     ~Dog();
+    Dog(const Dog &src);
+    Dog &operator=(const Dog &rhs);
 
-    const std::string &getType() const;
     void makeSound() const;
+    void setIdeas(const int &i, const std::string &idea);
+    const std::string &getIdeas(const int &i) const;
 };
 
 #endif //_DOG_HPP_

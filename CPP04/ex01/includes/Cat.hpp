@@ -9,15 +9,15 @@ class Cat : public Animal
   private:
     Brain *m_brain;
 
-    Cat(const Cat &src);
-    Cat &operator=(const Cat &rhs);
-
   public:
     Cat();
     ~Cat();
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &rhs);
 
-    const std::string &getType() const;
     void makeSound() const;
+	void setIdeas(const int &i, const std::string &idea);
+	const std::string &getIdeas(const int &i) const;
 };
 
 #endif //_CAT_HPP_
