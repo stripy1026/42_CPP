@@ -2,10 +2,12 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Build",
+			"label": "Build C++",
 			"type": "cppbuild",
 			"command": "make",
 			"args": [
+				"-C",
+				"${fileDirname}/../",
 				"DEBUG=true"
 			],
 			"options": {
