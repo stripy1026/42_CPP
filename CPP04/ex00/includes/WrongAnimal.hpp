@@ -12,6 +12,7 @@ class WrongAnimal
 
   public:
     WrongAnimal(const std::string type);
+	virtual ~WrongAnimal();
     void makeSound() const;
 };
 

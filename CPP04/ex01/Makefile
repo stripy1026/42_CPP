@@ -6,13 +6,13 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/05/24 20:20:26 by incho            ###   ########.fr        #
+#    Updated: 2022/05/24 20:17:57 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SUFFIXES: .c .o .h
 
-NAME	=	polymorphism
+NAME	=	the_ink_spot
 
 CP		=	cp
 RM		=	rm -f
@@ -51,8 +51,7 @@ SRCS		=	main.cpp		\
 				Animal.cpp		\
 				Cat.cpp			\
 				Dog.cpp			\
-				WrongAnimal.cpp	\
-				WrongCat.cpp
+				Brain.cpp
 				
 # ----------------------------------
 # Object files

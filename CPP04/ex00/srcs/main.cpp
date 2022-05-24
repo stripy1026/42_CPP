@@ -16,11 +16,17 @@ int main()
     j->makeSound();
     meta->makeSound();
 
+    delete meta;
+    delete j;
+    delete i;
+
     std::cout << YELLOW << "=== WRONG ANIMAL TESTS ===" << RESET << std::endl;
     const WrongAnimal *k = new WrongCat();
 
     std::cout << YELLOW << "cat sounds : " << RESET;
     k->makeSound();
+
+    delete k;
 
     return (0);
 }
