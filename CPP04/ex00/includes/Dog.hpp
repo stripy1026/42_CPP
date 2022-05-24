@@ -13,8 +13,8 @@ class Dog : public Animal
     Dog();
     ~Dog();
 
-    std::string getType() const;
-	void makeSound() const;
+    const std::string &getType() const;
+    void makeSound() const;
 };
 
 #endif //_DOG_HPP_

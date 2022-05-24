@@ -21,7 +21,7 @@ Cat &Cat::operator=(const Cat &rhs)
     return (*this);
 }
 
-std::string Cat::getType() const
+const std::string &Cat::getType() const
 {
     return (m_type);
 }

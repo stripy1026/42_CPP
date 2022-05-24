@@ -21,7 +21,7 @@ Dog &Dog::operator=(const Dog &rhs)
     return (*this);
 }
 
-std::string Dog::getType() const
+const std::string &Dog::getType() const
 {
     return (m_type);
 }

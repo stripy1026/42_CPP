@@ -26,7 +26,7 @@ Animal::Animal(const std::string type) : m_type(type)
     std::cout << "Animal constructor with type : " << YELLOW << type << RESET << " has been called." << std::endl;
 }
 
-std::string Animal::getType() const
+const std::string &Animal::getType() const
 {
     return (m_type);
 }

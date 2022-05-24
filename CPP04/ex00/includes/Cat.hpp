@@ -13,8 +13,8 @@ class Cat : public Animal
     Cat();
     ~Cat();
 
-	std::string getType() const;
-	void makeSound() const;
+    const std::string &getType() const;
+    void makeSound() const;
 };
 
 #endif //_CAT_HPP_
