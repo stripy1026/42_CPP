@@ -2,15 +2,15 @@
 #define _AMETERIA_HPP_
 
 #include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
 class AMateria
 {
   protected:
     std::string m_type;
 
-    AMateria();
-
   public:
+    AMateria();
     virtual ~AMateria();
     AMateria(const AMateria &src);
     AMateria &operator=(const AMateria &rhs);
