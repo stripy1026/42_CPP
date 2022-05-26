@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/05/26 13:13:18 by incho            ###   ########.fr        #
+#    Updated: 2022/05/26 14:23:24 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ VPATH	=	$(DIR_SRC) $(addprefix $(DIR_SRC)/, $(SUBDIRS))
 # ----------------------------------
 
 CC		=	c++
-CFLAGS	=	-Wall -Wextra -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 # ----------------------------------
 # Debug flag
@@ -119,6 +119,6 @@ re				:	fclean $(NAME)
 # ----------------------------------
 
 leak			: all
-			@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+			@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
 
 .PHONY			:	clean fclean re leak

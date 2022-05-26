@@ -47,6 +47,7 @@ void MateriaSource::learnMateria(AMateria *m)
     if (m_source_slot == m_source_size)
     {
         std::cout << "This source is full." << std::endl;
+        delete m;
         return;
     }
     m_sources[m_source_slot] = m;

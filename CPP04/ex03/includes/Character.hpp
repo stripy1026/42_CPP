@@ -1,7 +1,7 @@
 #ifndef _CHARACTER_HPP_
 #define _CHARACTER_HPP_
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Character : public ICharacter
 {

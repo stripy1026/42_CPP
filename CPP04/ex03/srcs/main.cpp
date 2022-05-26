@@ -112,8 +112,8 @@ static void testMateriaSource()
 
 int main(void)
 {
-    // testSubject();
+    testSubject();
     testCharacter();
-    // testMateriaSource();
+    testMateriaSource();
     return (0);
 }

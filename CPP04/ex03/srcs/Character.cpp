@@ -55,11 +55,12 @@ void Character::equip(AMateria *m)
     if (!m)
         return;
     int i = 0;
-    while (m_inventory[i])
+    while (i < m_inventory_size && m_inventory[i])
         ++i;
     if (i == m_inventory_size)
     {
         std::cout << GREEN << getName() << RESET << "'s inventory is full." << std::endl;
+        delete m;
         return;
     }
     m_inventory[i] = m;

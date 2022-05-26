@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+#include "AMateria.hpp"
 #include "color.hpp"
 
 class AMateria;
