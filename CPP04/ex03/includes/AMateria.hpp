@@ -2,7 +2,6 @@
 #define _AMETERIA_HPP_
 
 #include "ICharacter.hpp"
-#include "IMateriaSource.hpp"
 
 class AMateria
 {

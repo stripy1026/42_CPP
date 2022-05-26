@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/05/25 16:30:56 by incho            ###   ########.fr        #
+#    Updated: 2022/05/26 13:13:18 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,9 @@ WHITE		= \033[1;37m
 SRCS		=	main.cpp		\
 				AMateria.cpp	\
 				Ice.cpp			\
-				Cure.cpp
+				Cure.cpp		\
+				Character.cpp	\
+				MateriaSource.cpp
 				
 # ----------------------------------
 # Object files
@@ -73,7 +75,7 @@ VPATH	=	$(DIR_SRC) $(addprefix $(DIR_SRC)/, $(SUBDIRS))
 # ----------------------------------
 
 CC		=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -std=c++98
 
 # ----------------------------------
 # Debug flag
