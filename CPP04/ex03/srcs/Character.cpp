@@ -38,11 +38,11 @@ Character &Character::operator=(const Character &rhs)
     return (*this);
 }
 
-Character::Character(const std::string &name) : m_name(name)
+Character::Character(const std::string &name) : m_inventory(), m_name(name)
 {
     std::cout << YELLOW << "CALLED : " << RESET << "Character constructor with name" << std::endl;
-    for (int i; i < m_inventory_size; ++i)
-        m_inventory[i] = NULL;
+    // for (int i; i < m_inventory_size; ++i)
+    //     m_inventory[i] = NULL;
 }
 
 std::string const &Character::getName() const
