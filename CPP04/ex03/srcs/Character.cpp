@@ -26,7 +26,7 @@ Character &Character::operator=(const Character &rhs)
     if (this == &rhs)
         return (*this);
     m_name = rhs.m_name;
-    for (int i; i < m_inventory_size; ++i)
+    for (int i = 0; i < m_inventory_size; ++i)
     {
         if (m_inventory[i])
             delete m_inventory[i];
@@ -41,7 +41,7 @@ Character &Character::operator=(const Character &rhs)
 Character::Character(const std::string &name) : m_inventory(), m_name(name)
 {
     std::cout << YELLOW << "CALLED : " << RESET << "Character constructor with name" << std::endl;
-    // for (int i; i < m_inventory_size; ++i)
+    // for (int i = 0; i < m_inventory_size; ++i)
     //     m_inventory[i] = NULL;
 }
 

@@ -115,5 +115,6 @@ int main(void)
     testSubject();
     testCharacter();
     testMateriaSource();
+	system("leaks interface");
     return (0);
 }

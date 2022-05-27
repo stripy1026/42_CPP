@@ -28,5 +28,6 @@ int main()
 
     delete k;
 
+	system("leaks polymorphism");
     return (0);
 }

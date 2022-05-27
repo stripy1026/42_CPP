@@ -47,5 +47,6 @@ int main()
         std::cout << YELLOW << "+destructions" << RESET << std::endl;
     }
     // Animal ani;
+	system("leaks abstract_class");
     return (0);
 }

@@ -46,5 +46,6 @@ int main()
 
         std::cout << YELLOW << "+destructions" << RESET << std::endl;
     }
+	system("leaks the_ink_spot");
     return (0);
 }
