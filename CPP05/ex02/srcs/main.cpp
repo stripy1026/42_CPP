@@ -3,17 +3,18 @@
 
 int main(void)
 {
-    Form form("tedious task", 10, 4);
-    Bureaucrat bob("Bob", 11);
-
-    std::cout << form << std::endl;
-    std::cout << bob << std::endl;
-
-    bob.signForm(form);
-    bob.incrementGrade(1);
-    bob.signForm(form);
-
-    std::cout << std::endl << form << std::endl;
-
+    Bureaucrat *p = NULL;
+    try
+    {
+        p = new Bureaucrat("Bob", 150);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << RED "Error : " RESET << e.what() << std::endl;
+    }
+    if (!p)
+        return (0);
+    std::cout << *p << std::endl;
+    delete p;
     return (0);
 }
