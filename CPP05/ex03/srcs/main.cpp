@@ -1,13 +1,11 @@
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 #include <iomanip>
 
 static void printTitle(std::string title)
 {
     std::string toPrint;
-    int size = 72;
+    int size = 68;
     int n;
 
     toPrint = " " + title + " ";
@@ -30,41 +28,52 @@ int main(void)
 {
     srand(time(NULL));
 
-    printTitle("Shrubbery Creation");
-    Form *shrub = new ShrubberyCreationForm("home");
-    Bureaucrat corr("Correcteur", 1);
-    Bureaucrat me("Lucie", 140);
-
-    corr.executeForm(*shrub);
-    corr.signForm(*shrub);
-    std::cout << *shrub << std::endl;
-    std::cout << corr << std::endl;
-    corr.executeForm(*shrub);
-    me.executeForm(*shrub);
-    delete shrub;
-
-    printTitle("Robotomy Request");
-    Form *robotomy = new RobotomyRequestForm("Correcteur");
-    Bureaucrat me2("Lucie", 1);
-
-    me2.executeForm(*robotomy);
-    me2.signForm(*robotomy);
-    me2.executeForm(*robotomy);
-    me2.executeForm(*robotomy);
-    me2.executeForm(*robotomy);
-    me2.executeForm(*robotomy);
-    delete robotomy;
-
-    printTitle("Presidential Pardon");
-    Form *presidential = new PresidentialPardonForm("Correcteur");
-    Bureaucrat me3("Lucie", 8);
-
-    me3.executeForm(*presidential);
-    me3.signForm(*presidential);
-    me3.executeForm(*presidential);
-    me3.incrementGrade(3);
-    me3.executeForm(*presidential);
-    delete presidential;
-
+    printTitle("Formular Creation");
+    Bureaucrat pres("President", 1);
+    Intern exploitedIntern;
+    Form *forms[4];
+    try
+    {
+        forms[0] = exploitedIntern.makeForm("shrubbery creation", "Target1");
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << RED "Error : " RESET << e.what() << std::endl;
+    }
+    try
+    {
+        forms[1] = exploitedIntern.makeForm("robotomy request", "Target2");
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << RED "Error : " RESET << e.what() << std::endl;
+    }
+    try
+    {
+        forms[2] = exploitedIntern.makeForm("presidential pardon", "Target3");
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << RED "Error : " RESET << e.what() << std::endl;
+    }
+    try
+    {
+        forms[3] = exploitedIntern.makeForm("formular", "Target4");
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << RED "Error : " RESET << e.what() << std::endl;
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        if (forms[i])
+        {
+            std::cout << std::endl << *(forms[i]) << std::endl;
+            pres.signForm(*(forms[i]));
+            pres.executeForm(*(forms[i]));
+        }
+    }
+    for (int i = 0; i < 3; i++)
+        delete forms[i];
     return (0);
 }
