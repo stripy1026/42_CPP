@@ -59,17 +59,26 @@ const int &Form::getExecuteGrade() const
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-    return ("Grade is too high. valid grade must be 1 ~ 150.");
+    return ("Grade is too high.");
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-    return ("Grade is too low. valid grade must be 1 ~ 150.");
+    return ("Grade is too low.");
+}
+const char *Form::ExecuteNotSignedException::what() const throw()
+{
+    return ("form is not signed");
+}
+
+const char *Form::FileOpeningFailException::what() const throw()
+{
+    return ("file cannot be opened");
 }
 
 std::ostream &operator<<(std::ostream &o, const Form &form)
 {
     o << "form " GREEN << form.getName() << RESET " signed : " GREEN << form.getSigned() << RESET " sign_grade : " GREEN
-      << form.getSignGrade() << RESET " execute_grade : " GREEN << form.getExecuteGrade() << RESET << std::endl;
+      << form.getSignGrade() << RESET " execute_grade : " GREEN << form.getExecuteGrade() << RESET;
     return (o);
 }
