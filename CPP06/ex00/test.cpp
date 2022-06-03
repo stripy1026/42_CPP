@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
 int main()
 {
@@ -9,9 +10,9 @@ int main()
     std::cout << std::strtof(input, NULL) << std::endl;
     std::cout << std::strtod(input, NULL) << std::endl;
 
-    const char input2[] = "4.2f";
-    double a = std::strtod(input2, NULL);
-    std::cout << static_cast<float>(a) << std::endl;
+    const char input2[] = "999999999999";
+    double a = std::atoi(input2);
+    std::cout << static_cast<double>(a) << std::endl;
 
     return (0);
 }
