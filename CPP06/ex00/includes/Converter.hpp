@@ -16,6 +16,8 @@ class Converter
 	Converter(const Converter &src);
 	Converter &operator=(const Converter &rhs);
 
+	void m_detectType();
+
   public:
     ~Converter();
 	
@@ -25,6 +27,7 @@ class Converter
 	const std::string &getType() const;
 
 	void detectType();
+	char convertToChar() const;
 };
 
 #endif // _CONVERTER_HPP_

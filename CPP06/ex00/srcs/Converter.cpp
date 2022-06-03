@@ -21,6 +21,7 @@ Converter &Converter::operator=(const Converter &rhs)
 
 Converter::Converter(const std::string &input) : m_input(input), m_type("string")
 {
+    m_detectType();
 }
 
 const std::string &Converter::getInput() const
@@ -33,15 +34,43 @@ const std::string &Converter::getType() const
     return (m_type);
 }
 
-void Converter::detectType()
+void Converter::m_detectType()
 {
-    if ((m_input.length() == 1) && ((32 < m_input[0] && m_type[0] < 48) || (57 < m_input[0] && m_input[0] < 127)))
+    if (m_input == "nan")
+    {
+        m_type = "double";
+        return;
+    }
+    if (m_input == "nanf")
+    {
+        m_type = "float";
+        return;
+    }
+    if ((m_input.length() == 1) && (m_input[0] < '0' || m_input[0] > '9'))
     {
         m_type = "char";
         return;
     }
-    for (int i = 0; i < m_type.length(); ++i)
+    int i = (m_input[0] == '-' || m_input[0] == '+') ? 1 : 0;
+    while (('0' <= m_input[i] && m_input[i] <= '9') && (i < m_input.length()))
+        ++i;
+    if (i == m_input.length())
     {
-		
+        m_type = "int";
+        return;
+    }
+    if (m_input[i] == '.')
+        ++i;
+    while (('0' <= m_input[i] && m_input[i] <= '9') && (i < m_input.length()))
+        ++i;
+    if (i == m_input.length())
+    {
+        m_type = "double";
+        return;
+    }
+    if (m_input[i] == 'f' && (i + 1 == m_input.length()))
+    {
+        m_type = "float";
+        return;
     }
 }
