@@ -8,6 +8,6 @@ int main(int argc, char **argv)
         return (EXIT_FAILURE);
     }
     Converter c(argv[1]);
-    std::cout << c.getInput() << " : " << c.getType() << std::endl;
+    std::cout << c;
     return (EXIT_SUCCESS);
 }

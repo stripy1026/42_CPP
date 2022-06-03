@@ -1,8 +1,11 @@
 #ifndef _CONVERTER_HPP_
 #define _CONVERTER_HPP_
 
+#include <cerrno>
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
+#include <limits>
 
 #include "color.hpp"
 
@@ -19,12 +22,18 @@ class Converter
 
     bool m_can_char;
     bool m_can_int;
+    bool m_can_float;
+    bool m_is_erange;
 
     Converter();
     Converter(const Converter &src);
     Converter &operator=(const Converter &rhs);
 
     void m_detectType();
+    void m_convertChar();
+    void m_convertInt();
+    void m_convertFloat();
+    void m_convertDouble();
 
   public:
     ~Converter();
@@ -33,6 +42,7 @@ class Converter
 
     const std::string &getInput() const;
     const std::string &getType() const;
+    const bool &getIsErange() const;
 
     void detectType();
 
