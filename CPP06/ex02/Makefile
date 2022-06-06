@@ -6,7 +6,7 @@
 #    By: incho <incho@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 08:18:34 by incho             #+#    #+#              #
-#    Updated: 2022/06/04 16:35:04 by incho            ###   ########.fr        #
+#    Updated: 2022/06/06 11:34:55 by incho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,7 @@ WHITE		= \033[1;37m
 
 SRCS		=	main.cpp		\
 				Base.cpp		\
-				A.cpp			\
-				B.cpp			\
-				C.cpp
+				identify.cpp
 				
 # ----------------------------------
 # Object files
