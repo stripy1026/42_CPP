@@ -1,9 +1,8 @@
 #ifdef _EASYFIND_HPP_
 
-template <typename T> void easyfind(const T &container, const int find)
+template <typename T> typename T::const_iterator easyfind(const T &container, const int find)
 {
-    (void)container;
-    (void)find;
+    return (std::find(container.begin(), container.end(), find));
 }
 
 #endif // _EASYFIND_HPP_
