@@ -60,7 +60,7 @@ template <typename T> Array<T> &Array<T>::operator=(const Array<T> &rhs)
     return (*this);
 }
 
-template <typename T> Array<T>::Array(const unsigned int n) : m_data(new T[n]), m_size(n)
+template <typename T> Array<T>::Array(const unsigned int n) : m_data(new T[n]()), m_size(n)
 {
 }
 
