@@ -61,23 +61,17 @@ int Span::shortestSpan() const
     if (m_size < 2)
         throw Span::notEnoughSize();
     std::sort(copy.begin(), copy.end());
-    for (std::vector<int>::const_iterator it = m_data.begin() + 1; it < m_data.end(); ++it)
+    for (std::vector<int>::const_iterator it = ++copy.begin(); it != copy.end(); ++it)
         res = std::min(res, static_cast<long long>(*it - *(it - 1)));
     if (res < std::numeric_limits<int>::min() || res > std::numeric_limits<int>::max())
         std::cout << YELLOW "Warning : " RESET << "Span value is out of int range." << std::endl;
     return static_cast<int>(res);
 }
 
-void Span::addRandomPositiveNumbers(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last,
-                                    const int max_value)
+void Span::fillUsingIterRange(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last)
 {
-    if (max_value < 1)
-    {
-        std::cout << RED "Error : " RESET << "(in func : addRandomPositiveNumbers) use int bigger than 1." << std::endl;
-        return;
-    }
-    for (std::vector<int>::const_iterator it = first; it < last; ++it)
-        addNumber(rand() % max_value);
+    for (std::vector<int>::const_iterator it = first; it != last; ++it)
+        addNumber(*it);
 }
 
 const char *Span::sizeIsFull::what() const throw()

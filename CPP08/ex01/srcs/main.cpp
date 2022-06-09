@@ -40,16 +40,24 @@ static void printTitle(std::string title, bool toUpper = true)
     std::cout << std::setfill(c) << std::setw(size) << "" << std::endl;
 }
 
+std::vector<int> makeRandomPositiveVector(const unsigned int size, const unsigned int max_value)
+{
+    std::vector<int> vec;
+    for (unsigned int i = 0; i < size; ++i)
+        vec.push_back(rand() % max_value);
+    return vec;
+}
+
 int main(void)
 {
     {
         printTitle("Subject");
         Span sp = Span(5);
 
-        sp.addNumber(5);
+        sp.addNumber(6);
         sp.addNumber(3);
         sp.addNumber(17);
-        sp.addNumber(12);
+        sp.addNumber(9);
         sp.addNumber(11);
 
         std::cout << "shortest span\t" << sp.shortestSpan() << std::endl;
@@ -93,10 +101,12 @@ int main(void)
     }
     {
         printTitle("Lot of data");
-        Span sp = Span(100000);
+        const unsigned int size = 100000;
+        Span sp = Span(size);
 
         srand(time(NULL));
-        sp.addRandomPositiveNumbers(sp.getData().begin(), sp.getData().end(), std::numeric_limits<int>::max());
+        std::vector<int> tmp = makeRandomPositiveVector(size, std::numeric_limits<int>::max());
+        sp.fillUsingIterRange(tmp.begin(), tmp.end());
         std::cout << "shortest span \t" << sp.shortestSpan() << std::endl;
         std::cout << "longest span  \t" << sp.longestSpan() << std::endl;
     }

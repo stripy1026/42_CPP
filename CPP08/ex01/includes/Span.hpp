@@ -5,6 +5,7 @@
 #include <ctime>
 #include <exception>
 #include <iostream>
+#include <iterator>
 #include <limits>
 #include <vector>
 
@@ -23,7 +24,7 @@ class Span
   public:
     // Orthodox Canonical Class Form
     ~Span();
-	Span(const Span &src);
+    Span(const Span &src);
     Span &operator=(const Span &rhs);
 
     // Constructor
@@ -36,8 +37,7 @@ class Span
     void addNumber(const int n);
     int shortestSpan() const;
     int longestSpan() const;
-    void addRandomPositiveNumbers(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last,
-                                  const int max_value);
+    void fillUsingIterRange(std::vector<int>::const_iterator first, std::vector<int>::const_iterator last);
 
     // exceptions
     class sizeIsFull : public std::exception
