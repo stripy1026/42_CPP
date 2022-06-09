@@ -60,8 +60,8 @@ int main(void)
         sp.addNumber(9);
         sp.addNumber(11);
 
-        std::cout << "shortest span\t" << sp.shortestSpan() << std::endl;
-        std::cout << "longest span \t" << sp.longestSpan() << std::endl;
+        std::cout << YELLOW "shortest span\t" RESET << sp.shortestSpan() << std::endl;
+        std::cout << YELLOW "longest span \t" RESET << sp.longestSpan() << std::endl;
     }
     {
         printTitle("Exceptions");
@@ -70,7 +70,7 @@ int main(void)
         sp.addNumber(5);
         try
         {
-            std::cout << "shortest span\t" << sp.shortestSpan() << std::endl;
+            std::cout << YELLOW "shortest span\t" RESET << sp.shortestSpan() << std::endl;
         }
         catch (const std::exception &e)
         {
@@ -79,7 +79,7 @@ int main(void)
         }
         try
         {
-            std::cout << "longest span \t" << sp.longestSpan() << std::endl;
+            std::cout << YELLOW "longest span \t" RESET << sp.longestSpan() << std::endl;
         }
         catch (const std::exception &e)
         {
@@ -96,8 +96,8 @@ int main(void)
         {
             std::cerr << RED "Error : " RESET << e.what() << std::endl;
         }
-        std::cout << "shortest span\t" << sp.shortestSpan() << std::endl;
-        std::cout << "longest span \t" << sp.longestSpan() << std::endl;
+        std::cout << YELLOW "shortest span\t" RESET << sp.shortestSpan() << std::endl;
+        std::cout << YELLOW "longest span \t" RESET << sp.longestSpan() << std::endl;
     }
     {
         printTitle("Lot of data");
@@ -107,8 +107,8 @@ int main(void)
         srand(time(NULL));
         std::vector<int> tmp = makeRandomPositiveVector(size, std::numeric_limits<int>::max());
         sp.fillUsingIterRange(tmp.begin(), tmp.end());
-        std::cout << "shortest span \t" << sp.shortestSpan() << std::endl;
-        std::cout << "longest span  \t" << sp.longestSpan() << std::endl;
+        std::cout << YELLOW "shortest span \t" RESET << sp.shortestSpan() << std::endl;
+        std::cout << YELLOW "longest span  \t" RESET << sp.longestSpan() << std::endl;
     }
     return 0;
 }
